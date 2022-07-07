@@ -1,0 +1,25 @@
+templates:
+  Genre:
+    sort_title: +1_6<<collection_name>>
+    sync_mode: sync
+    collection_mode: hide
+    collection_order: custom
+    cache_builders: 6
+######################################################
+#                Genre Collections                   #
+######################################################
+collections:
+  Kids Movies:
+    template: { name: Genre }
+    tmdb_discover:
+      with_genres: 10751
+      sort_by: primary_release_date.desc
+      with_original_language: en
+      vote_average.gte: 5
+      vote_count.gte: 300
+      certification_country: US
+      certification.lte: PG
+      limit: 1500
+    summary: Popular movies for your Kid(s)!
+    item_label: Kids
+    file_poster: config/assets/Genre/Movies/movies_kids.jpg 
